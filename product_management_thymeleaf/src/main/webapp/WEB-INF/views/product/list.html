@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sản phẩm</title>
+    <th:block th:replace="~{common::library}"></th:block>
+</head>
+<body>
+<div th:replace="~{common::header}"></div>
+<div class="container">
+    <button class="btn btn-primary" onclick="window.location.href='/product/create'">Thêm mới</button>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Nhà sản xuất</th>
+            <th colspan="2">Chức năng</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product, temp : ${products}">
+            <td th:text="${temp.count}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.producer}"></td>
+            <td>
+                <button class="btn btn-warning">Sửa</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" data-bs-toggle="modal" th:attr="data-bs-target='#modalDelete' + ${product.id}">
+                    Xóa
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal Delete -->
+    <div th:each="product : ${products}">
+        <div class="modal fade" th:id="'modalDelete' + ${product.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Xóa học sinh</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p th:text="'Bạn có chắc muốn xóa sản phẩm có tên là ' + ${product.name} + ' và id là ' + ${product.id} + '?'" ></p>
+                        <small style="color: red; font-style: italic">Lưu ý hành động này không thể hoàn tác!</small>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <a th:href="@{/product/{id}/delete(id=${product.id})}"></a>
+                        <button type="button" class="btn btn-danger" th:onclick="|window.location.href='/product/' + ${product.id} + '/delete'|">Xác nhận</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${message != null}" class="alert alert-success" role="alert" id="message" th:text="${message}"></div>
+</div>
+
+</body>
+<script>
+    setTimeout(function () {
+        let message = document.getElementById("message");
+        if (message) {
+            message.remove();
+        }
+    }, 3000);
+</script>
+</html>

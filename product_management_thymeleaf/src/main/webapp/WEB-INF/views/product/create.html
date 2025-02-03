@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Thêm mới học sinh</title>
+    <th:block th:replace="~{common::library}"></th:block>
+</head>
+<body>
+<div th:replace="~{common::header}"></div>
+<div class="container">
+    <div class="alert alert-danger">
+        <ul>
+            <li th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+        </ul>
+    </div>
+
+    <form th:action="@{/product/create}" th:object="${product}" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Tên: </label>
+            <input type="text" class="form-control" id="name" name="name" th:field="*{name}"/>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Giá: </label>
+            <input type="text" class="form-control" id="price" name="price" th:field="*{price}"/>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Mô tả: </label>
+            <input type="text" class="form-control" id="description" name="description" th:field="*{description}"/>
+        </div>
+        <div class="mb-3">
+            <label for="producer" class="form-label">Nhà sản xuất: </label>
+            <input type="number" class="form-control" id="producer" name="producer" th:field="*{producer}"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm mới</button>
+    </form>
+</div>
+</body>
+</html>
