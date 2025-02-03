@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="827018b8-7703-4561-b708-ce8bd6d3a83e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring_timezone2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring_timezone2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring_timezone2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring_timezone2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring_timezone2/src/main/webapp/WEB-INF/configs/spring-config-mvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +35,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2rzE823yEpfF56cWC6DUgspgL09" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -55,7 +50,7 @@
     "Tomcat Server.Tomcat 9.0.98.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/github/java_module_4/spring_timezone/src/main/webapp/WEB-INF",
+    "last_opened_file_path": "D:/java/demo_spring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -174,7 +169,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737553339922</updated>
-      <workItem from="1737553340944" duration="585000" />
+      <workItem from="1737553340944" duration="1054000" />
+      <workItem from="1737717819577" duration="15000" />
     </task>
     <servers />
   </component>
