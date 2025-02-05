@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>Detail Song</title>
+</head>
+<body>
+<h3>View Song</h3>
+<p>
+    <a th:href="@{/songs}">
+        Back to customer list
+    </a>
+</p>
+<div id="detail">
+    <div class="cus-detail">
+        <label>Title:</label>
+        <label th:text="${song.title}"></label>
+    </div>
+    <div class="cus-detail">
+        <label>Artist:</label>
+        <label th:text="${song.artist}"></label>
+    </div>
+    <div class="cus-detail">
+        <label>Link:</label>
+        <a target="_blank" th:href="${song.link}" th:text="${song.link}"></a>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
