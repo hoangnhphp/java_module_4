@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Cá Nhân</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">Blog Cá Nhân</h1>
+    <a href="/blogs/create" class="btn btn-primary mb-3">Viết bài mới</a>
+
+    <div class="row" id="post-list">
+        <!-- Danh sách bài viết sẽ được hiển thị ở đây -->
+        <div th:each="post, temp : ${blogs}" class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${post.title}"></h5>
+                    <p class="card-text" th:text="${post.content.length() > 50 ? #strings.substring(post.content, 0, 50) + '...':post.content}"></p>
+                    <a th:href="@{/blogs/{id}(id=${post.id})}" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendors/jquery.min.js"></script>
+<script src="/vendors/bootstrap.bundle.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

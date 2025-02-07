@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viết bài mới</title>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+  <h1>Viết bài mới</h1>
+  <form id="post-form" method="post" th:action="@{/blogs/create}" th:object="${blog}">
+    <input type="text" name="title" th:field="*{title}" id="post-title" class="form-control mb-2" placeholder="Tiêu đề bài viết">
+    <textarea id="post-content" name="content" th:field="*{content}" class="form-control mb-2" placeholder="Nội dung bài viết"></textarea>
+    <input hidden="hidden" name="user_id" value="1" th:field="*{user_id}">
+    <button type="submit" class="btn btn-success">Đăng bài</button>
+  </form>
+</div>
+
+<script src="/vendors/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
