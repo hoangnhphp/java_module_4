@@ -3,7 +3,7 @@ package com.codegym.customer.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "Customers")
 public class Customer implements Cloneable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
